@@ -3,17 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>💕 Nossos Momentos</title>
+    <title>💕 Momolados 2025</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
     <div class="header">
-        <div class="logo">💕 Nossos Momentos</div>
+        <div class="logo">💕 Feliz dia dos namorados</div>
     </div>
 
     <div class="progress-bar">
         <div class="progress-fill" id="progressFill"></div>
     </div>
+
+        <!-- Controles de Áudio -->
+        <div class="audio-controls">
+            <button class="audio-btn" id="audioToggle" onclick="toggleAudio()">🎵</button>
+            <button class="audio-btn" onclick="toggleVolumeControl()">🔊</button>
+            <div class="volume-control" id="volumeControl">
+                <div class="volume-fill" id="volumeFill"></div>
+                <div class="volume-handle" id="volumeHandle"></div>
+            </div>
+        </div>
+    
+        <!-- Informações da Música -->
+        <div class="music-info" id="musicInfo">
+            <div style="display: flex; align-items: center;">
+                🎶 Música Romântica
+                <div class="equalizer" id="equalizer" style="display: none;">
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Áudio -->
+        <audio id="backgroundMusic" loop>
+            <source src="sound/flamengo.mp3" type="audio/mpeg">
+            <!-- Backup: você pode adicionar seu próprio arquivo MP3 aqui -->
+            <!-- <source src="sua-musica-romantica.mp3" type="audio/mpeg"> -->
+        </audio>
 
     <div class="container" id="container">
         <!-- Item 1 -->
@@ -30,8 +62,6 @@
             
             <div class="sidebar">
                 <div class="action-btn" onclick="toggleLike(this)">💖</div>
-                <div class="action-btn" onclick="showComments()">💬</div>
-                <div class="action-btn" onclick="shareContent()">📤</div>
             </div>
         </div>
 
@@ -49,8 +79,6 @@
             
             <div class="sidebar">
                 <div class="action-btn" onclick="toggleLike(this)">💖</div>
-                <div class="action-btn" onclick="showComments()">💬</div>
-                <div class="action-btn" onclick="shareContent()">📤</div>
             </div>
         </div>
 
@@ -71,8 +99,6 @@
             
             <div class="sidebar">
                 <div class="action-btn" onclick="toggleLike(this)">💖</div>
-                <div class="action-btn" onclick="showComments()">💬</div>
-                <div class="action-btn" onclick="shareContent()">📤</div>
             </div>
         </div>
 
@@ -90,8 +116,6 @@
             
             <div class="sidebar">
                 <div class="action-btn" onclick="toggleLike(this)">💖</div>
-                <div class="action-btn" onclick="showComments()">💬</div>
-                <div class="action-btn" onclick="shareContent()">📤</div>
             </div>
         </div>
 
@@ -109,8 +133,6 @@
             
             <div class="sidebar">
                 <div class="action-btn" onclick="toggleLike(this)">💖</div>
-                <div class="action-btn" onclick="showComments()">💬</div>
-                <div class="action-btn" onclick="shareContent()">📤</div>
             </div>
         </div>
 
@@ -131,36 +153,12 @@
             
             <div class="sidebar">
                 <div class="action-btn" onclick="toggleLike(this)">💖</div>
-                <div class="action-btn" onclick="showComments()">💬</div>
-                <div class="action-btn" onclick="shareContent()">📤</div>
             </div>
         </div>
     </div>
 
     <div class="bottom-nav">
         <button class="nav-btn active">🏠</button>
-        <button class="nav-btn" onclick="openUpload()">➕</button>
-        <button class="nav-btn">💕</button>
-        <button class="nav-btn">👤</button>
-    </div>
-
-    <!-- Upload Overlay -->
-    <div class="upload-overlay" id="uploadOverlay">
-        <div class="upload-content">
-            <button class="close-btn" onclick="closeUpload()">×</button>
-            <h2>💝 Adicionar Nova Memória</h2>
-            <div class="upload-area" id="uploadArea">
-                <p>📸 Toque aqui ou arraste suas fotos e vídeos</p>
-                <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 10px;">
-                    Formatos: JPG, PNG, MP4, MOV
-                </p>
-            </div>
-            <input type="file" id="fileInput" accept="image/*,video/*" multiple>
-            <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
-                Escolher Arquivos
-            </button>
-            <button class="upload-btn" onclick="closeUpload()">Cancelar</button>
-        </div>
     </div>
 
     <script src="script.js"></script>
