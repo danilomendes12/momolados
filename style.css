@@ -6,7 +6,7 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: #000;
+    background: #ffebee;
     color: #fff;
     overflow: hidden;
     height: 100vh;
@@ -110,7 +110,7 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 105, 180, 0.3);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     display: flex;
@@ -124,7 +124,7 @@ body {
 }
 
 .action-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 105, 180, 0.5);
     transform: scale(1.1);
 }
 
@@ -136,13 +136,13 @@ body {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 105, 180, 0.9);
     border: none;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    color: #ff6b6b;
+    color: white;
     cursor: pointer;
     z-index: 4;
     transition: all 0.3s ease;
@@ -164,19 +164,26 @@ body {
     left: 0;
     right: 0;
     height: 80px;
-    background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(180deg, rgba(255, 105, 180, 0.8) 0%, rgba(255, 105, 180, 0) 100%);
     z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 30px;
+    padding-top: 10px;
 }
 
 .logo {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
 .bottom-nav {
@@ -223,23 +230,25 @@ body {
 .heart {
     position: absolute;
     font-size: 20px;
-    color: rgba(255, 182, 193, 0.6);
+    color: rgba(255, 105, 180, 0.8);
     animation: floatHeart 4s infinite ease-in-out;
 }
 
 @keyframes floatHeart {
     0% {
-        transform: translateY(100vh) rotate(0deg);
+        transform: translateY(100vh) rotate(0deg) scale(0.5);
         opacity: 0;
     }
     10% {
         opacity: 1;
+        transform: translateY(80vh) rotate(90deg) scale(1);
     }
     90% {
         opacity: 1;
+        transform: translateY(20vh) rotate(270deg) scale(1);
     }
     100% {
-        transform: translateY(-20vh) rotate(360deg);
+        transform: translateY(-20vh) rotate(360deg) scale(0.5);
         opacity: 0;
     }
 }
@@ -318,53 +327,48 @@ input[type="file"] {
 
 .progress-bar {
     position: fixed;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 3px;
-    height: 200px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 2px;
-    z-index: 5;
+    top: 80px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 10;
 }
 
 .progress-fill {
-    width: 100%;
-    background: linear-gradient(180deg, #ff6b6b, #ee5a5a);
-    border-radius: 2px;
-    transition: height 0.3s ease;
-    height: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff69b4, #ff1493);
+    width: 0%;
+    transition: width 0.1s linear;
 }
 
 .audio-controls {
     position: fixed;
-    top: 50px;
-    right: 15px;
-    z-index: 15;
+    top: 100px;
+    right: 20px;
+    z-index: 10;
     display: flex;
-    flex-direction: column;
     gap: 10px;
     align-items: center;
 }
 
 .audio-btn {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 105, 180, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
-    color: white;
-    cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .audio-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 105, 180, 0.5);
     transform: scale(1.1);
 }
 
@@ -465,10 +469,61 @@ input[type="file"] {
     50% { height: 20px; }
 }
 
+.video-item:first-child .content-info {
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 600px;
+    background: rgba(255, 105, 180, 0.2);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.video-item:first-child .title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.video-item:first-child .description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.video-item:first-child .date {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.video-item:first-child .floating-hearts {
+    opacity: 0.8;
+}
+
+.video-item:first-child .heart {
+    font-size: 30px;
+}
+
+.video-item:first-child .media-content {
+    height: 70vh;
+    width: auto;
+    max-width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.video-item:first-child {
+    background: #ffebee;
+}
 
 @media (max-width: 480px) {
     .content-info {
-        bottom: 120px;
+        bottom: 10px;
         left: 15px;
         right: 70px;
     }
@@ -491,5 +546,95 @@ input[type="file"] {
         width: 45px;
         height: 45px;
         font-size: 1.3rem;
+    }
+}
+
+.valentine-card {
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    position: relative;
+    overflow: hidden;
+}
+
+.valentine-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    z-index: 1;
+}
+
+.valentine-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 40px;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.valentine-message .title {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: pulse 2s infinite;
+}
+
+.valentine-message .description {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.valentine-message .date {
+    font-size: 1.1rem;
+    color: white;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.valentine-card .floating-hearts {
+    z-index: 1;
+}
+
+.valentine-card .heart {
+    font-size: 35px;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 480px) {
+    .valentine-message {
+        padding: 20px;
+    }
+    
+    .valentine-message .title {
+        font-size: 1.8rem;
+    }
+    
+    .valentine-message .description {
+        font-size: 1.1rem;
     }
 }

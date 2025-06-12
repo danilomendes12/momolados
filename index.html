@@ -9,151 +9,288 @@
 <body>
     
     <div class="header">
-        <div class="logo">💕 Feliz dia dos namorados</div>
+        <div class="logo">💝 Obrigado por me aguentar!  💝</div>
     </div>
 
-    <div class="progress-bar">
-        <div class="progress-fill" id="progressFill"></div>
+    <!-- Controles de Áudio -->
+    <div class="audio-controls">
+        <button class="audio-btn" id="audioToggle" onclick="toggleAudio()">🎵</button>
+        <button class="audio-btn" onclick="toggleVolumeControl()">🔊</button>
+        <div class="volume-control" id="volumeControl">
+            <div class="volume-fill" id="volumeFill"></div>
+            <div class="volume-handle" id="volumeHandle"></div>
+        </div>
     </div>
 
-        <!-- Controles de Áudio -->
-        <div class="audio-controls">
-            <button class="audio-btn" id="audioToggle" onclick="toggleAudio()">🎵</button>
-            <button class="audio-btn" onclick="toggleVolumeControl()">🔊</button>
-            <div class="volume-control" id="volumeControl">
-                <div class="volume-fill" id="volumeFill"></div>
-                <div class="volume-handle" id="volumeHandle"></div>
+    <!-- Informações da Música -->
+    <div class="music-info" id="musicInfo">
+        <div style="display: flex; align-items: center;">
+            🎶 Mengão
+            <div class="equalizer" id="equalizer" style="display: none;">
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
             </div>
         </div>
-    
-        <!-- Informações da Música -->
-        <div class="music-info" id="musicInfo">
-            <div style="display: flex; align-items: center;">
-                🎶 Música Romântica
-                <div class="equalizer" id="equalizer" style="display: none;">
-                    <div class="eq-bar"></div>
-                    <div class="eq-bar"></div>
-                    <div class="eq-bar"></div>
-                    <div class="eq-bar"></div>
-                    <div class="eq-bar"></div>
-                </div>
-            </div>
-        </div>
-    
-        <!-- Áudio -->
-        <audio id="backgroundMusic" loop>
-            <source src="sound/flamengo.mp3" type="audio/mpeg">
-            <!-- Backup: você pode adicionar seu próprio arquivo MP3 aqui -->
-            <!-- <source src="sua-musica-romantica.mp3" type="audio/mpeg"> -->
-        </audio>
+    </div>
+
+    <!-- Áudio -->
+    <audio id="backgroundMusic" loop>
+        <source src="sound/flamengo.mp3" type="audio/mpeg">
+        <!-- Backup: você pode adicionar seu próprio arquivo MP3 aqui -->
+        <!-- <source src="sua-musica-romantica.mp3" type="audio/mpeg"> -->
+    </audio>
 
     <div class="container" id="container">
         <!-- Item 1 -->
         <div class="video-item">
-            <img class="media-content" src="images/tabuas.jpeg" alt="Primeiro encontro">
+            <img class="media-content" src="images/landing.png" alt="Palmolengo">
             <div class="overlay"></div>
             <div class="floating-hearts" id="hearts1"></div>
             
-            <div class="content-info">
-                <div class="title">🌹 Nosso primeiro encontro</div>
-                <div class="description">Que noite mágica! Ainda lembro do nervosismo e da felicidade ao mesmo tempo. Foi quando tudo começou...</div>
-                <div class="date">14 de Fevereiro, 2024</div>
-            </div>
-            
-            <div class="sidebar">
-                <div class="action-btn" onclick="toggleLike(this)">💖</div>
+            <div class="content-info valentine-message">
+                <div class="title">💝 Feliz dia dos momolados! 💝</div>
+                <div class="description">Fiz este site para mostrar como a vida é boa com você. Aperte no botão de música aqui em cima para ouvir a trilha sonora e arrasta pra baixo. Te amo muito, meu amor.</div>
             </div>
         </div>
 
-        <!-- Item 2 -->
+        <!-- Item 8 -->
         <div class="video-item">
-            <img class="media-content" src="https://images.unsplash.com/photo-1518987048-093e6c6ef4d6?w=400&h=800&fit=crop" alt="Jantar romântico">
+            <img class="media-content" src="images/maraca.jpeg" alt="Maracanã">
             <div class="overlay"></div>
-            <div class="floating-hearts" id="hearts2"></div>
+            <div class="floating-hearts" id="hearts8"></div>
             
             <div class="content-info">
-                <div class="title">🕯️ Jantar especial</div>
-                <div class="description">Aquele restaurante incrível onde você me surpreendeu com as flores. A comida estava deliciosa, mas sua companhia era ainda melhor!</div>
-                <div class="date">20 de Março, 2024</div>
-            </div>
-            
-            <div class="sidebar">
-                <div class="action-btn" onclick="toggleLike(this)">💖</div>
+                <div class="title">⚽ No maraca</div>
+                <div class="description">Nossa primeira vez no estádio mais bonito do mundo! Gol do Breno Lopes</div>
             </div>
         </div>
 
-        <!-- Item 3 - Vídeo -->
+                <!-- Item 18 -->
         <div class="video-item">
-            <video class="media-content" muted loop>
-                <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
-            </video>
+            <img class="media-content" src="images/allianz.jpeg" alt="Allianz">
             <div class="overlay"></div>
-            <div class="floating-hearts" id="hearts3"></div>
-            <button class="play-btn" onclick="toggleVideo(this)">▶</button>
+            <div class="floating-hearts" id="hearts18"></div>
             
             <div class="content-info">
-                <div class="title">🌅 Pôr do sol na praia</div>
-                <div class="description">O vídeo mais lindo que fizemos juntos. Que momento perfeito! O som das ondas e você ao meu lado...</div>
-                <div class="date">15 de Maio, 2024</div>
+                <div class="title">⚽ No Allianz Parque</div>
+                <div class="description">Torcendo para o time do casal!</div>
             </div>
+        </div>
+
+        <!-- Item 9 -->
+        <div class="video-item">
+            <img class="media-content" src="images/rio2.jpeg" alt="Rio de Janeiro">
+            <div class="overlay"></div>
+            <div class="floating-hearts" id="hearts9"></div>
             
-            <div class="sidebar">
-                <div class="action-btn" onclick="toggleLike(this)">💖</div>
+            <div class="content-info">
+                <div class="title">🌅 Rio de Janeiro</div>
+                <div class="description">Coca zero, água de coco e barata na cozinha</div>
+            </div>
+        </div>
+
+                        <!-- Item 12 -->
+        <div class="video-item">
+            <img class="media-content" src="images/ibirapuera.jpeg" alt="Ibirapuera">
+            <div class="overlay"></div>
+            <div class="floating-hearts" id="hearts12"></div>
+            
+            <div class="content-info">
+                <div class="title">🌳 Parque Ibirapuera</div>
+                <div class="description">Nem tudo em sp é ruim</div>
+            </div>
+        </div>
+
+                <!-- Item 22 -->
+        <div class="video-item">
+            <img class="media-content" src="images/napraiademadrugada.jpeg" alt="Na praia de madrugada">
+            <div class="overlay"></div>
+            <div class="floating-hearts" id="hearts22"></div>
+            
+            <div class="content-info">
+                <div class="title">🌙 Na praia de madrugada</div>
+                <div class="description">Só alegria</div>
+            </div>
+        </div>
+
+        <!-- Item 23 -->
+        <div class="video-item">
+            <img class="media-content" src="images/camburi.jpeg" alt="Camburi">
+            <div class="overlay"></div>
+            <div class="floating-hearts" id="hearts23"></div>
+            
+            <div class="content-info">
+                <div class="title">🏖️ Em Camburi</div>
+                <div class="description">Nossos primeiros momentos na praia!</div>
+            </div>
+        </div>
+                
+
+        <!-- Item 10 -->
+        <div class="video-item">
+            <img class="media-content" src="images/rio.jpeg" alt="Rio de Janeiro">
+            <div class="overlay"></div>
+            <div class="floating-hearts" id="hearts10"></div>
+            
+            <div class="content-info">
+                <div class="title">🌴 Caos em copacabana</div>
+                <div class="description">Turixtas</div>
+            </div>
+        </div>
+
+        <!-- Item 11 -->
+        <div class="video-item">
+            <img class="media-content" src="images/tucupirio.jpeg" alt="Tucupi no Rio">
+            <div class="overlay"></div>
+            <div class="floating-hearts" id="hearts11"></div>
+            
+            <div class="content-info">
+                <div class="title">🍽️ Tucupi</div>
+                <div class="description">Nossa comida preferida em qualquer lugar!</div>
+            </div>
+        </div>
+
+        <!-- Item 13 -->
+        <div class="video-item">
+            <img class="media-content" src="images/tucupi.jpeg" alt="Tucupi">
+            <div class="overlay"></div>
+            <div class="floating-hearts" id="hearts13"></div>
+            
+            <div class="content-info">
+                <div class="title">🍲 Tucupi em Manaus</div>
+                <div class="description">Me vê dois por favor</div>
+            </div>
+        </div>
+        <!-- Item 15 -->
+        <div class="video-item">
+            <img class="media-content" src="images/paola.jpeg" alt="Paola">
+            <div class="overlay"></div>
+            <div class="floating-hearts" id="hearts15"></div>
+            
+            <div class="content-info">
+                <div class="title">👗 Almoço no restaurante da Paola</div>
+                <div class="description">Comendo ostras e bebendo cerveja</div>
+            </div>
+        </div>
+        <!-- Item 20 -->
+        <div class="video-item">
+            <img class="media-content" src="images/torta.jpeg" alt="Torta">
+            <div class="overlay"></div>
+            <div class="floating-hearts" id="hearts20"></div>
+            
+            <div class="content-info">
+                <div class="title">🍰 Fazendo torta</div>
+                <div class="description">Masterchefs</div>
             </div>
         </div>
 
         <!-- Item 4 -->
         <div class="video-item">
-            <img class="media-content" src="https://images.unsplash.com/photo-1529516570158-e5676a697dcd?w=400&h=800&fit=crop" alt="Viagem">
+            <img class="media-content" src="images/pizzaemcasa.jpeg" alt="Pizza em casa">
             <div class="overlay"></div>
             <div class="floating-hearts" id="hearts4"></div>
             
             <div class="content-info">
-                <div class="title">✈️ Nossa viagem dos sonhos</div>
-                <div class="description">Cada momento ao seu lado é uma aventura incrível. Descobrindo o mundo juntos, criando memórias inesquecíveis!</div>
-                <div class="date">10 de Junho, 2024</div>
-            </div>
-            
-            <div class="sidebar">
-                <div class="action-btn" onclick="toggleLike(this)">💖</div>
+                <div class="title">🍕 Fazendo pizza</div>
+                <div class="description">A melhor do ranking</div>
             </div>
         </div>
 
-        <!-- Item 5 -->
+        <!-- Item 3 -->
         <div class="video-item">
-            <img class="media-content" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=400&h=800&fit=crop" alt="Casal feliz">
+            <img class="media-content" src="images/fazendocompras.jpeg" alt="Fazendo compras">
+            <div class="overlay"></div>
+            <div class="floating-hearts" id="hearts3"></div>
+            
+            <div class="content-info">
+                <div class="title">🛒 Fazendo comprinhas</div>
+                <div class="description">Dobrando a meta após a primeira loja!</div>
+            </div>
+        </div>
+
+        <!-- Item 19 -->
+        <div class="video-item">
+            <img class="media-content" src="images/touca.jpeg" alt="Touca">
+            <div class="overlay"></div>
+            <div class="floating-hearts" id="hearts19"></div>
+            
+            <div class="content-info">
+                <div class="title">🛒 Fazendo mais comprinhas</div>
+                <div class="description"></div>
+            </div>
+        </div>
+              <!-- Item 7 -->
+        <div class="video-item">
+        <img class="media-content" src="images/confra.jpeg" alt="Confraternização">
+        <div class="overlay"></div>
+        <div class="floating-hearts" id="hearts7"></div>
+        
+        <div class="content-info">
+            <div class="title">🍺 Cerveja no confra!</div>
+            <div class="description">Celebrando mesversário!</div>
+        </div>
+    </div>
+
+    <div class="video-item">
+        <img class="media-content" src="images/tabuas2.jpeg" alt="Confraternização">
+        <div class="overlay"></div>
+        <div class="floating-hearts" id="hearts7"></div>
+        
+        <div class="content-info">
+            <div class="title">🍺 Cerveja no tabuas!</div>
+            <div class="description">O nosso bar favorito</div>
+        </div>
+    </div>
+
+        <!-- Item 24 -->
+        <div class="video-item">
+            <img class="media-content" src="images/emcasa.jpeg" alt="Em casa">
+            <div class="overlay"></div>
+            <div class="floating-hearts" id="hearts24"></div>
+            
+            <div class="content-info">
+                <div class="title">🏠 Em casa</div>
+                <div class="description">O melhor lugar do mundo. Comendo comida da sogra</div>
+            </div>
+        </div>
+
+          <!-- Item 5 -->
+          <div class="video-item">
+            <img class="media-content" src="images/bravaemcasa.jpeg" alt="Brava em casa">
             <div class="overlay"></div>
             <div class="floating-hearts" id="hearts5"></div>
             
             <div class="content-info">
-                <div class="title">😊 Risadas sem fim</div>
-                <div class="description">Você sempre consegue me fazer rir, mesmo nos dias mais difíceis. Seu sorriso é minha fonte de alegria diária!</div>
-                <div class="date">25 de Agosto, 2024</div>
-            </div>
-            
-            <div class="sidebar">
-                <div class="action-btn" onclick="toggleLike(this)">💖</div>
+                <div class="title">😠 Brava em casa</div>
+                <div class="description">Eu amo muito</div>
             </div>
         </div>
 
-        <!-- Item 6 - Vídeo -->
+        <!-- Item 25 -->
         <div class="video-item">
-            <video class="media-content" muted loop>
-                <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4" type="video/mp4">
-            </video>
+            <img class="media-content" src="images/pastel.jpeg" alt="Pastel">
             <div class="overlay"></div>
-            <div class="floating-hearts" id="hearts6"></div>
-            <button class="play-btn" onclick="toggleVideo(this)">▶</button>
+            <div class="floating-hearts" id="hearts25"></div>
             
             <div class="content-info">
-                <div class="title">🚶‍♀️ Passeio no parque</div>
-                <div class="description">Nossas caminhadas sempre rendem as melhores conversas. Falando sobre sonhos, planos e tudo que nos conecta.</div>
-                <div class="date">30 de Setembro, 2024</div>
+                <div class="title">🥟 No pastel</div>
+                <div class="description">Será que vem sem azeitona??</div>
             </div>
-            
-            <div class="sidebar">
-                <div class="action-btn" onclick="toggleLike(this)">💖</div>
-            </div>
+        </div>
+    </div>
+
+       <!-- Item 14 -->
+    <div class="video-item">
+        <img class="media-content" src="images/koruja.jpeg" alt="Koruja">
+        <div class="overlay"></div>
+        <div class="floating-hearts" id="hearts14"></div>
+        
+        <div class="content-info">
+            <div class="title">🦉 Koruja</div>
+            <div class="description">Nossa amiguinha durante todos esses momentos! Te amo muito, meu amor. Obrigado por esse ano!</div>
         </div>
     </div>
     <script src="script.js"></script>

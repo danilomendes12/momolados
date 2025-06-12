@@ -252,7 +252,6 @@ function tryAutoplay() {
         }).catch(() => {
             // Autoplay foi bloqueado
             console.log('Autoplay bloqueado - clique no botão para tocar música');
-            showMusicInfo('Clique em 🎵 para tocar música', 20000);
         });
     }
 }
